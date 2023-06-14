@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+*{
+    font-family: 'IBM Plex Mono', monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+body{
+    background-color: rgba(50, 50, 110, 0.479);
+}
+
+.header{
+  background-color: chocolate;
+  display: flex;
+  justify-content: space-between;
+  /*para nav con logo izq y logo derecha
+  justify-content: flex-end;*/
+  align-items:center;
+  height: 85px;
+  padding: 5px 10%;
+
+  /*para dejarla fija*/
+  position: fixed;
+  width: 80%;
+}
+
+.header .logo{
+    cursor: pointer;
+    /*para nav derecha
+    margin-right: auto;
+    logo der
+    order:3;
+    margin-left:auto;  */
+}
+
+.header .logo img{
+    border-radius: 50%;
+    height: 3.5em;
+    transition: all 0.5s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+/*logo derecha
+.header .nav{
+    order: 1;
+}*/
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 0.5s ease 0s;
+}
+
+.header .nav-links li:hover,
+.overlay a:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    text-decoration: none;
+    color: black;
+    border-radius: 15%;
+}
+
+/*nav con logo a la derecha
+
+.header .nav-links li:nth-child(1){
+    padding: 0 20px 0 0;
+}*/
+
+.header .nav-links li a:hover{
+    color: rgb(220, 234, 245);
+}
+
+/*logo a la derecha
+.header .btn{
+    order: 2;
+}*/
+.menu{
+    display: none;
+}
+
+.header .btn button,
+.header .menu button{
+    font-weight: 700;
+    color: #ffffff;
+    padding: 9px 25px;
+    background: rgb(71, 104, 100);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    /*nav dere y nav izquierda
+    margin-left: 20px;*/
+
+}
+
+.header .btn button:hover,
+.header .menu button:hover{
+    background-color: aliceblue;
+    color: rgb(255, 123, 0);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:800px){
+    .nav-links, .btn{
+        display: none;
+    }
+    .menu {
+        display: inherit;
+    }
+}
+/* nav*/ 
+
+.header a{
+    text-decoration: none;
+
+}
+
+.header .overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(26, 24, 24, 0.39);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.header .overlay .overlay-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .overlay a{
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.header .overlay a:hover,
+.header .overlay a:focus{
+    color:chartreuse;
+}
+
+.header .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+}
+
+
+@media screen and (max-height:450px){
+    .header .overlay a{
+        font-size: 20px;
+    }
+
+    .header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
